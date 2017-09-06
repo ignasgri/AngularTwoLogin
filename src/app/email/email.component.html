@@ -1,3 +1,15 @@
-<p>
-  email works!
-</p>
+<div class="form-container">
+  <a routerLink="/login" id="goback">Go back</a>
+
+  <h2>Custom Login</h2>
+
+  <span class="error" *ngIf="error" [@fallIn]="state">{{error}}</span>
+
+  <form #formData="ngForm" (ngSubmit)="onSubmit(formData)"></form>
+    <input type="text" placeholder="Email address..." (ngModel)="email" name="email" class="txt" required>
+    <input type="password" placeholder="Password here" (ngModel)="password" name="password" class="txt" required>
+  
+    <button type="submit" [disabled]="!formData.valid" class="basic-btn">Create account</button>
+    <a routerLink="/signup" class="alc">No account?</a>
+  </form>
+</div>
