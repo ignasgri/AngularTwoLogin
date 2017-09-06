@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router }from '@angular/router';
-import { moveIn }from '../router.animations';
+import { moveIn,fallIn }from '../router.animations';
 
 @Component({
   selector: 'app-email',
@@ -10,7 +10,7 @@ import { moveIn }from '../router.animations';
   animations: [moveIn()],
   host: {'[@moveIn]': ''}
 })
-export class SignupComponent implements OnInit {
+export class EmailComponent implements OnInit {
 
 state: string = '';
 error: any;
