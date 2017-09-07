@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods }from 'angularfire2';
+import * as firebase from 'firebase/app';
 import { Router }from '@angular/router';
 import { moveIn, fallIn }from '../router.animations';
 @Component({
@@ -24,13 +25,13 @@ error: any;
        this.af.auth.createUser({
          email: formData.value.email,
          password: formData.value.password
-       }).then(
+      }).then(
          (success) => {
-           this.router.navigate(['/members'])
-         }).catch (
+           this.router.navigate(['/login'])
+      }).catch (
            (err) => {
              this.error = err;
-           })
+      })
      }
    }
   ngOnInit() {

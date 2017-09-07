@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { Router }from '@angular/router';
 import { moveIn,fallIn }from '../router.animations';
 
@@ -41,7 +42,5 @@ error: any;
    }
   ngOnInit() {
   }
-
-}
 
 }
